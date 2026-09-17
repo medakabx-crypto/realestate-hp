@@ -1,0 +1,11 @@
+/* PC表示を設定 */
+@media (min-width: 769px) {
+
+    /* キャッチコピーを設定 */
+    .hero-text p {
+        margin: 0;
+
+        font-size: 20px;
+    }
+
+}

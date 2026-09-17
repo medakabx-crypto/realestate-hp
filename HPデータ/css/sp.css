@@ -1,0 +1,135 @@
+/* スマホ表示を設定 */
+@media (max-width: 768px) {
+
+    /* ヘッダーを設定 */
+    .header-inner {
+        padding: 15px 20px;
+    }
+
+
+    /* 会社名を設定 */
+    .header h1 {
+        font-size: 18px;
+    }
+
+
+    /* PCナビゲーションを非表示 */
+    .pc-nav {
+        display: none;
+    }
+
+
+    /* メニューボタンを表示 */
+    .menu-button {
+        display: block;
+
+        padding: 5px 10px;
+
+        border: 0;
+        background: none;
+
+        font-size: 28px;
+
+        cursor: pointer;
+    }
+
+
+    /* スマホナビゲーション */
+    .sp-nav {
+        display: none;
+
+        flex-direction: column;
+
+        border-top: 1px solid #ddd;
+    }
+
+
+    /* スマホナビゲーションを表示 */
+    .sp-nav.open {
+        display: flex;
+    }
+
+
+    /* スマホナビゲーションのリンク */
+    .sp-nav a {
+        padding: 15px 20px;
+
+        border-bottom: 1px solid #ddd;
+    }
+
+
+    /* メインビジュアル */
+    .hero {
+        height: 420px;
+    }
+
+
+    /* メイン画像の文字 */
+    .hero-text {
+        left: 5%;
+        bottom: 8%;
+    }
+
+
+    /* メインタイトル */
+    .hero-text h2 {
+        font-size: 28px;
+    }
+
+
+    /* キャッチコピー */
+    .catch-section {
+        padding: 50px 0;
+    }
+
+
+    .catch-section h2 {
+        font-size: 21px;
+    }
+
+
+    /* 会社紹介 */
+    .about-section {
+        padding: 50px 0;
+    }
+
+
+    .about-section h2,
+    .company-section h2,
+    .calendar-section h2 {
+        font-size: 24px;
+    }
+
+
+    /* 会社情報 */
+    .company-section {
+        padding: 50px 0;
+    }
+
+
+    .company-info p {
+        display: block;
+    }
+
+
+    /* 会社情報の項目名 */
+    .company-info p > span:first-child {
+        display: block;
+
+        width: auto;
+
+        margin-bottom: 5px;
+    }
+
+
+    /* カレンダー */
+    .calendar-section {
+        padding: 50px 0;
+    }
+
+
+    .calendar-container iframe {
+        min-height: 600px;
+    }
+
+}
