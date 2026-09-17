@@ -1,0 +1,505 @@
+/* リフォームページタイトル */
+.reform-title {
+    padding: 80px 0;
+
+    text-align: center;
+
+    background-color: #f7f5f0;
+}
+
+
+.reform-title p:first-child {
+    margin: 0 0 10px;
+
+    font-size: 18px;
+}
+
+
+.reform-title h2 {
+    margin: 0 0 15px;
+
+    font-size: 42px;
+}
+
+
+.reform-title p:last-child {
+    margin: 0;
+
+    line-height: 1.5;
+}
+
+
+/* リフォームの特徴 */
+.reform-feature {
+    padding: 80px 0;
+}
+
+
+.reform-feature h2 {
+    margin: 0 0 30px;
+
+    text-align: center;
+
+    font-size: 30px;
+}
+
+
+.feature-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.feature-item {
+    padding: 25px;
+
+    text-align: center;
+
+    border: 1px solid #ddd;
+}
+
+
+.feature-item span {
+    display: inline-block;
+
+    margin-bottom: 10px;
+    padding: 4px 25px;
+
+    border: 1px solid #70a85a;
+    border-radius: 30px;
+
+    color: #4f873e;
+    font-weight: bold;
+}
+
+
+.feature-item p {
+    margin: 0;
+
+    text-align: left;
+
+    line-height: 1.5;
+}
+
+
+/* リフォームセクション */
+.reform-section {
+    padding: 80px 0;
+}
+
+
+.reform-section-gray {
+    background-color: #f7f7f7;
+}
+
+
+/* セクション見出し */
+.section-heading {
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+
+.section-heading p {
+    margin: 0;
+
+    color: #6d9d59;
+
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+}
+
+
+.section-heading h2 {
+    margin: 3px 0 10px;
+
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+
+.section-heading span {
+    display: block;
+
+    line-height: 1.5;
+}
+
+
+/* 内装リフォーム一覧 */
+.interior-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* 内装リフォームカード */
+.interior-item {
+    overflow: hidden;
+
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+}
+
+
+.interior-item img {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+}
+
+
+.interior-item-body {
+    padding: 15px 18px;
+}
+
+
+.interior-item-body h3 {
+    margin: 0 0 5px;
+
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+
+.interior-item-body p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+
+/* リフォーム一覧 */
+.reform-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* リフォームカード */
+.reform-card {
+    overflow: hidden;
+
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+}
+
+
+.reform-card img {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+}
+
+
+.reform-card-body {
+    padding: 15px 18px;
+}
+
+
+.reform-card-body h3 {
+    margin: 0 0 5px;
+
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+
+.reform-card-body p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+
+/* その他の工事 */
+.other-reform {
+    padding: 80px 0;
+}
+
+
+.other-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.other-list > div {
+    padding: 22px;
+
+    background-color: #f7f5f0;
+
+    border-top: 4px solid #70a85a;
+}
+
+
+.other-list h3 {
+    margin: 0 0 8px;
+
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+
+.other-list p {
+    margin: 0;
+
+    line-height: 1.5;
+}
+
+
+/* 無料見積もり */
+.reform-price {
+    padding: 70px 0;
+
+    text-align: center;
+
+    background-color: #fff7f3;
+}
+
+
+.price-message {
+    display: inline-block;
+
+    margin: 0 0 10px;
+    padding: 6px 30px;
+
+    border: 1px solid #e0784f;
+    border-radius: 30px;
+
+    color: #d65c35;
+
+    line-height: 1.4;
+}
+
+
+.reform-price h2 {
+    margin: 0;
+
+    color: #e33325;
+
+    font-size: 38px;
+    line-height: 1.3;
+}
+
+
+.price-free {
+    margin: 8px 0;
+
+    color: #e33325;
+
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+
+.reform-price p:not(.price-message):not(.price-free) {
+    margin: 15px auto 25px;
+
+    max-width: 700px;
+
+    line-height: 1.5;
+}
+
+
+/* お問い合わせボタン */
+.reform-contact-button {
+    display: inline-block;
+
+    padding: 13px 35px;
+
+    color: #fff;
+    background-color: #333;
+
+    border-radius: 4px;
+
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+
+.reform-contact-button:hover {
+    opacity: 0.7;
+}
+
+
+/* 会社情報 */
+.reform-company {
+    padding: 60px 0;
+
+    text-align: center;
+
+    background-color: #f7f7f7;
+}
+
+
+.reform-company h2 {
+    margin: 0 0 20px;
+
+    font-size: 28px;
+    line-height: 1.4;
+}
+
+
+.reform-company p {
+    margin: 4px 0;
+
+    line-height: 1.5;
+}
+
+
+/* スマホ表示 */
+@media (max-width: 768px) {
+
+    /* ページタイトル */
+    .reform-title {
+        padding: 50px 0;
+    }
+
+
+    .reform-title h2 {
+        font-size: 32px;
+    }
+
+
+    /* リフォームの特徴 */
+    .reform-feature {
+        padding: 50px 0;
+    }
+
+
+    .reform-feature h2 {
+        margin-bottom: 25px;
+
+        font-size: 25px;
+    }
+
+
+    .feature-list {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .feature-item {
+        padding: 20px;
+    }
+
+
+    /* リフォームセクション */
+    .reform-section {
+        padding: 50px 0;
+    }
+
+
+    .section-heading {
+        margin-bottom: 25px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+
+    /* 内装リフォーム */
+    .interior-list {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .interior-item img {
+        aspect-ratio: 4 / 3;
+    }
+
+
+    .interior-item-body {
+        padding: 14px 16px;
+    }
+
+
+    /* 写真付きリフォーム */
+    .reform-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .reform-card img {
+        aspect-ratio: 4 / 3;
+    }
+
+
+    /* その他の工事 */
+    .other-reform {
+        padding: 50px 0;
+    }
+
+
+    .other-list {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .other-list > div {
+        padding: 18px;
+    }
+
+
+    /* 無料見積もり */
+    .reform-price {
+        padding: 50px 0;
+    }
+
+
+    .reform-price h2 {
+        font-size: 30px;
+    }
+
+
+    .price-free {
+        font-size: 26px;
+    }
+
+
+    /* 会社情報 */
+    .reform-company {
+        padding: 50px 0;
+    }
+
+
+    .reform-company h2 {
+        font-size: 24px;
+    }
+
+}
