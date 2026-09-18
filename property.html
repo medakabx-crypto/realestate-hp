@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- スマホ表示に対応 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ページタイトル -->
+    <title>物件一覧 | 江井ヶ島不動産合同会社</title>
+
+    <!-- CSSを読み込み -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pc.css">
+    <link rel="stylesheet" href="css/sp.css">
+
+    <!-- 物件一覧ページの設定 -->
+    <style>
+
+        /* ページタイトル */
+        .property-title {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #f7f5f0;
+        }
+
+        .property-title p {
+            margin: 0;
+            color: #6d9d59;
+            font-size: 14px;
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+
+        .property-title h2 {
+            margin: 8px 0 0;
+            font-size: 42px;
+            line-height: 1.3;
+        }
+
+
+        /* 物件一覧 */
+        .property-section {
+            padding: 70px 0;
+        }
+
+
+        /* 物件一覧の説明 */
+        .property-description {
+            margin: 0 0 35px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+
+        /* 物件一覧 */
+        .property-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+
+        /* 物件カード */
+        .property-card {
+            overflow: hidden;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+
+
+        /* 物件カード上部 */
+        .property-card-header {
+            padding: 22px 25px;
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        /* 物件種別 */
+        .property-category {
+            display: inline-block;
+            margin-bottom: 8px;
+            padding: 3px 10px;
+            color: #fff;
+            background-color: #70a85a;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+
+        /* 物件名 */
+        .property-card h3 {
+            margin: 0;
+            font-size: 22px;
+            line-height: 1.5;
+        }
+
+
+        /* 物件カード本文 */
+        .property-card-body {
+            padding: 25px;
+        }
+
+
+        /* 物件情報 */
+        .property-info {
+            margin: 0;
+        }
+
+
+        /* 物件情報の行 */
+        .property-info-row {
+            display: flex;
+            margin: 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            line-height: 1.6;
+        }
+
+
+        /* 物件情報の項目名 */
+        .property-info-label {
+            flex: 0 0 90px;
+            font-weight: bold;
+        }
+
+
+        /* 物件情報の内容 */
+        .property-info-value {
+            flex: 1;
+        }
+
+
+        /* 価格 */
+        .property-price {
+            color: #b44a3c;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        /* おすすめポイント */
+        .property-recommendation {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f7f5f0;
+        }
+
+
+        .property-recommendation h4 {
+            margin: 0 0 8px;
+            font-size: 17px;
+        }
+
+
+        .property-recommendation p {
+            margin: 0;
+            line-height: 1.7;
+        }
+
+
+        /* 詳細ボタン */
+        .property-detail-button {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 13px 20px;
+            text-align: center;
+            color: #fff;
+            background-color: #70a85a;
+            border: 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        .property-detail-button:hover {
+            opacity: 0.8;
+        }
+
+
+        /* 物件がない場合 */
+        .property-empty {
+            padding: 50px 20px;
+            text-align: center;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+
+
+        /* 読み込み中 */
+        .property-loading {
+            padding: 50px 20px;
+            text-align: center;
+            color: #666;
+        }
+
+
+        /* エラー */
+        .property-error {
+            padding: 30px 20px;
+            text-align: center;
+            color: #b44a3c;
+            background-color: #fff5f3;
+            border: 1px solid #e5c5bf;
+        }
+
+
+        /* 詳細モーダル */
+        .property-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 40px 20px;
+            overflow-y: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+
+        /* 詳細モーダルを表示 */
+        .property-modal.open {
+            display: block;
+        }
+
+
+        /* モーダル内部 */
+        .property-modal-content {
+            position: relative;
+            width: min(800px, 100%);
+            margin: 0 auto;
+            padding: 35px;
+            background-color: #fff;
+        }
+
+
+        /* モーダルを閉じる */
+        .property-modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            padding: 5px 10px;
+            border: 0;
+            background: none;
+            font-size: 30px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+
+        /* モーダルタイトル */
+        .property-modal h3 {
+            margin: 0 40px 25px 0;
+            font-size: 28px;
+            line-height: 1.5;
+        }
+
+
+        /* モーダル本文 */
+        .property-modal-detail {
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+
+        /* スマホ表示 */
+        @media (max-width: 768px) {
+
+            /* ページタイトル */
+            .property-title {
+                padding: 50px 0;
+            }
+
+            .property-title h2 {
+                font-size: 32px;
+            }
+
+
+            /* 物件一覧 */
+            .property-section {
+                padding: 50px 0;
+            }
+
+
+            /* 物件一覧 */
+            .property-list {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+
+            /* 物件カード */
+            .property-card-header {
+                padding: 18px 20px;
+            }
+
+
+            .property-card h3 {
+                font-size: 20px;
+            }
+
+
+            /* 物件カード本文 */
+            .property-card-body {
+                padding: 20px;
+            }
+
+
+            /* 物件情報 */
+            .property-info-row {
+                display: block;
+            }
+
+
+            .property-info-label {
+                display: block;
+                margin-bottom: 3px;
+            }
+
+
+            /* モーダル */
+            .property-modal {
+                padding: 20px 10px;
+            }
+
+
+            .property-modal-content {
+                padding: 25px 20px;
+            }
+
+
+            .property-modal h3 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ヘッダーを読み込む -->
+    <div id="header"></div>
+
+
+    <!-- メインコンテンツ -->
+    <main>
+
+        <!-- ページタイトル -->
+        <section class="property-title">
+
+            <div class="container">
+
+                <p>Property</p>
+
+                <h2>物件一覧</h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- 物件一覧 -->
+        <section class="property-section">
+
+            <div class="container">
+
+                <p class="property-description">
+                    江井ヶ島不動産合同会社が取り扱っている物件をご紹介します。
+                </p>
+
+
+                <!-- 読み込み中 -->
+                <div
+                    id="property-loading"
+                    class="property-loading">
+                    物件情報を読み込んでいます。
+                </div>
+
+
+                <!-- エラー -->
+                <div
+                    id="property-error"
+                    class="property-error"
+                    style="display: none;">
+                    物件情報を読み込めませんでした。
+                </div>
+
+
+                <!-- 物件がない場合 -->
+                <div
+                    id="property-empty"
+                    class="property-empty"
+                    style="display: none;">
+                    現在、公開中の物件はありません。
+                </div>
+
+
+                <!-- 物件カード -->
+                <div
+                    id="property-list"
+                    class="property-list">
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- 物件詳細モーダル -->
+    <div
+        id="property-modal"
+        class="property-modal">
+
+        <div class="property-modal-content">
+
+            <!-- 閉じるボタン -->
+            <button
+                id="property-modal-close"
+                class="property-modal-close"
+                type="button"
+                aria-label="閉じる">
+                ×
+            </button>
+
+            <h3 id="property-modal-title"></h3>
+
+            <div
+                id="property-modal-detail"
+                class="property-modal-detail">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- フッターを読み込む -->
+    <div id="footer"></div>
+
+
+    <!-- 物件情報を取得 -->
+    <script>
+
+        // GoogleスプレッドシートID
+        const SPREADSHEET_ID =
+            "1tJYNLRsLskd3AprDuwcV_bBuL-ep_nKWMGMISDhIn8c";
+
+
+        // 物件一覧を取得
+        function loadProperties() {
+
+            // B列の公開が○の物件だけ取得
+            const query =
+                "select A,B,C,D,E,F,G,H,I,J,L,M " +
+                "where B = '○'";
+
+
+            const url =
+                "https://docs.google.com/spreadsheets/d/" +
+                SPREADSHEET_ID +
+                "/gviz/tq" +
+                "?tqx=out:json" +
+                "&tq=" +
+                encodeURIComponent(query);
+
+
+            fetch(url)
+
+                .then(response => {
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            "スプレッドシートを取得できませんでした。"
+                        );
+
+                    }
+
+                    return response.text();
+
+                })
+
+                .then(text => {
+
+                    const jsonText =
+                        text.substring(
+                            text.indexOf("(") + 1,
+                            text.lastIndexOf(")")
+                        );
+
+
+                    const data =
+                        JSON.parse(jsonText);
+
+
+                    displayProperties(
+                        data.table.rows
+                    );
+
+                })
+
+                .catch(error => {
+
+                    console.error(error);
+
+                    showPropertyError();
+
+                });
+
+        }
+
+
+        // 物件を表示
+        function displayProperties(rows) {
+
+            const list =
+                document.getElementById(
+                    "property-list"
+                );
+
+            const loading =
+                document.getElementById(
+                    "property-loading"
+                );
+
+            const empty =
+                document.getElementById(
+                    "property-empty"
+                );
+
+
+            loading.style.display = "none";
+
+
+            // 公開物件がない場合
+            if (!rows || rows.length === 0) {
+
+                empty.style.display = "block";
+
+                return;
+
+            }
+
+
+            list.innerHTML = "";
+
+
+            rows.forEach((row, index) => {
+
+                const values =
+                    row.c.map(cell => {
+
+                        if (!cell || cell.v === null) {
+
+                            return "";
+
+                        }
+
+                        return cell.f !== undefined
+                            ? cell.f
+                            : cell.v;
+
+                    });
+
+
+                /*
+                    取得した列
+
+                    0 = A 物件番号
+                    1 = B 公開
+                    2 = C 物件名
+                    3 = D 種別
+                    4 = E 価格
+                    5 = F 所在地
+                    6 = G 交通
+                    7 = H 間取り
+                    8 = I 面積
+                    9 = J 築年月
+                    10 = L おすすめポイント
+                    11 = M 詳細説明
+
+                    B列の公開は表示しない
+                    K列の写真は取得していない
+                */
+
+                const property = {
+
+                    propertyNumber:
+                        values[0] || "",
+
+                    propertyName:
+                        values[2] || "",
+
+                    category:
+                        values[3] || "",
+
+                    price:
+                        values[4] || "",
+
+                    address:
+                        values[5] || "",
+
+                    access:
+                        values[6] || "",
+
+                    layout:
+                        values[7] || "",
+
+                    area:
+                        values[8] || "",
+
+                    builtDate:
+                        values[9] || "",
+
+                    recommendation:
+                        values[10] || "",
+
+                    description:
+                        values[11] || ""
+
+                };
+
+
+                const card =
+                    createPropertyCard(
+                        property,
+                        index
+                    );
+
+
+                list.appendChild(card);
+
+            });
+
+        }
+
+
+        // 物件カードを作成
+        function createPropertyCard(
+            property,
+            index
+        ) {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "property-card";
+
+
+            // カード上部
+            const header =
+                document.createElement("div");
+
+            header.className =
+                "property-card-header";
+
+
+            // 種別
+            if (property.category) {
+
+                const category =
+                    document.createElement("span");
+
+                category.className =
+                    "property-category";
+
+                category.textContent =
+                    property.category;
+
+                header.appendChild(category);
+
+            }
+
+
+            // 物件名
+            const title =
+                document.createElement("h3");
+
+            title.textContent =
+                property.propertyName;
+
+            header.appendChild(title);
+
+
+            card.appendChild(header);
+
+
+            // カード本文
+            const body =
+                document.createElement("div");
+
+            body.className =
+                "property-card-body";
+
+
+            // 物件情報
+            const info =
+                document.createElement("div");
+
+            info.className =
+                "property-info";
+
+
+            addInfoRow(
+                info,
+                "物件番号",
+                property.propertyNumber
+            );
+
+
+            addInfoRow(
+                info,
+                "価格",
+                property.price,
+                "property-price"
+            );
+
+
+            addInfoRow(
+                info,
+                "所在地",
+                property.address
+            );
+
+
+            addInfoRow(
+                info,
+                "交通",
+                property.access
+            );
+
+
+            addInfoRow(
+                info,
+                "間取り",
+                property.layout
+            );
+
+
+            addInfoRow(
+                info,
+                "面積",
+                property.area
+            );
+
+
+            addInfoRow(
+                info,
+                "築年月",
+                property.builtDate
+            );
+
+
+            body.appendChild(info);
+
+
+            // おすすめポイント
+            if (property.recommendation) {
+
+                const recommendation =
+                    document.createElement("div");
+
+                recommendation.className =
+                    "property-recommendation";
+
+
+                const heading =
+                    document.createElement("h4");
+
+                heading.textContent =
+                    "おすすめポイント";
+
+
+                const text =
+                    document.createElement("p");
+
+                text.textContent =
+                    property.recommendation;
+
+
+                recommendation.appendChild(
+                    heading
+                );
+
+                recommendation.appendChild(
+                    text
+                );
+
+                body.appendChild(
+                    recommendation
+                );
+
+            }
+
+
+            // 詳細ボタン
+            if (property.description) {
+
+                const button =
+                    document.createElement("button");
+
+                button.type = "button";
+
+                button.className =
+                    "property-detail-button";
+
+                button.textContent =
+                    "物件詳細を見る";
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        openPropertyModal(
+                            property
+                        );
+
+                    }
+                );
+
+
+                body.appendChild(button);
+
+            }
+
+
+            card.appendChild(body);
+
+
+            return card;
+
+        }
+
+
+        // 物件情報の行を追加
+        function addInfoRow(
+            parent,
+            label,
+            value,
+            valueClass
+        ) {
+
+            if (!value) {
+                return;
+            }
+
+
+            const row =
+                document.createElement("div");
+
+            row.className =
+                "property-info-row";
+
+
+            const labelElement =
+                document.createElement("span");
+
+            labelElement.className =
+                "property-info-label";
+
+            labelElement.textContent =
+                label;
+
+
+            const valueElement =
+                document.createElement("span");
+
+            valueElement.className =
+                "property-info-value";
+
+
+            if (valueClass) {
+
+                valueElement.classList.add(
+                    valueClass
+                );
+
+            }
+
+
+            valueElement.textContent =
+                value;
+
+
+            row.appendChild(
+                labelElement
+            );
+
+            row.appendChild(
+                valueElement
+            );
+
+
+            parent.appendChild(row);
+
+        }
+
+
+        // 物件詳細を表示
+        function openPropertyModal(
+            property
+        ) {
+
+            const modal =
+                document.getElementById(
+                    "property-modal"
+                );
+
+            const title =
+                document.getElementById(
+                    "property-modal-title"
+                );
+
+            const detail =
+                document.getElementById(
+                    "property-modal-detail"
+                );
+
+
+            title.textContent =
+                property.propertyName;
+
+
+            detail.textContent =
+                property.description;
+
+
+            modal.classList.add(
+                "open"
+            );
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        // 物件詳細を閉じる
+        function closePropertyModal() {
+
+            const modal =
+                document.getElementById(
+                    "property-modal"
+                );
+
+
+            modal.classList.remove(
+                "open"
+            );
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        // エラーを表示
+        function showPropertyError() {
+
+            const loading =
+                document.getElementById(
+                    "property-loading"
+                );
+
+            const error =
+                document.getElementById(
+                    "property-error"
+                );
+
+
+            loading.style.display =
+                "none";
+
+            error.style.display =
+                "block";
+
+        }
+
+
+        // 閉じるボタン
+        document
+            .getElementById(
+                "property-modal-close"
+            )
+            .addEventListener(
+                "click",
+                closePropertyModal
+            );
+
+
+        // モーダル外側をクリック
+        document
+            .getElementById(
+                "property-modal"
+            )
+            .addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        event.target === this
+                    ) {
+
+                        closePropertyModal();
+
+                    }
+
+                }
+            );
+
+
+        // ページ読み込み時に物件を取得
+        loadProperties();
+
+    </script>
+
+
+    <!-- 共通JavaScript -->
+    <script src="js/common.js"></script>
+
+</body>
+
+</html>
