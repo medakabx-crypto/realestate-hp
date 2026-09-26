@@ -524,7 +524,7 @@
 
     /* スマホカード */
     .reform-card {
-        flex: 0 0 60%;
+        flex: 0 0 72%;
 
         scroll-snap-align: start;
     }
@@ -532,29 +532,43 @@
 
     /* カード内容 */
     .reform-card-body {
-        padding: 18px;
+        padding: 14px;
     }
 
-    .reform-card-title {
-        min-height: 3em;
 
-        margin-bottom: 12px;
+    /* 工事名 */
+    .reform-card-title {
+        min-height: 2.8em;
+
+        margin-bottom: 8px;
 
         font-size: 19px;
+
+        line-height: 1.4;
     }
 
+
+    /* 説明 */
     .reform-card-description {
-        height: 5.1em;
+        height: 4.5em;
 
         font-size: 14px;
+
+        line-height: 1.6;
     }
 
+
+    /* 価格 */
     .reform-price-list {
-        padding: 10px 12px;
+        padding: 7px 10px;
     }
 
     .reform-price-item {
-        font-size: 16px;
+        margin: 3px 0;
+
+        font-size: 14px;
+
+        line-height: 1.5;
     }
 
 
