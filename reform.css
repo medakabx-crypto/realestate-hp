@@ -1,0 +1,572 @@
+/* リフォームページタイトル */
+.reform-title {
+    padding: 80px 0;
+
+    text-align: center;
+
+    background-color: #f7f5f0;
+}
+
+.reform-title p:first-child {
+    margin: 0;
+
+    color: #6d9d59;
+
+    font-size: 14px;
+    letter-spacing: 2px;
+
+    line-height: 1.4;
+}
+
+.reform-title h2 {
+    margin: 8px 0 20px;
+
+    font-size: 42px;
+    line-height: 1.3;
+}
+
+.reform-title p:last-child {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    line-height: 1.8;
+}
+
+
+/* リフォームの特徴 */
+.reform-feature {
+    padding: 70px 0;
+}
+
+.reform-feature h2 {
+    margin: 0 0 30px;
+
+    text-align: center;
+
+    font-size: 30px;
+    line-height: 1.4;
+}
+
+.feature-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    width: min(1300px, 100%);
+    margin: 0 auto;
+}
+
+.feature-item {
+    padding: 30px;
+
+    text-align: center;
+
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+    border-top: 4px solid #70a85a;
+}
+
+.feature-item span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.feature-item p {
+    margin: 0;
+
+    line-height: 1.8;
+}
+
+
+/* リフォーム一覧 */
+.reform-list-section {
+    padding: 70px 0;
+
+    background-color: #f7f7f7;
+}
+
+
+/* リフォーム一覧の幅 */
+.reform-list-section .container {
+    width: min(1300px, 94%);
+}
+
+
+/* セクション見出し */
+.section-heading {
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+.section-heading p {
+    margin: 0;
+
+    color: #6d9d59;
+
+    font-size: 14px;
+    letter-spacing: 2px;
+
+    line-height: 1.2;
+}
+
+.section-heading h2 {
+    margin: 8px 0 12px;
+
+    color: #333;
+
+    font-size: 36px;
+    font-weight: bold;
+
+    line-height: 1.4;
+}
+
+.section-heading span {
+    line-height: 1.8;
+}
+
+
+/* カテゴリー */
+.reform-category {
+    margin-bottom: 60px;
+}
+
+.reform-category:last-child {
+    margin-bottom: 0;
+}
+
+.reform-category-title {
+    margin: 0 0 25px;
+
+    padding: 10px 15px;
+
+    color: #fff;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    line-height: 1.4;
+
+    background-color: #70a85a;
+
+    border-left: 6px solid #4f8240;
+}
+
+
+/* PCカード */
+.reform-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* カード */
+.reform-card {
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+
+/* 写真 */
+.reform-card-image {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+}
+
+
+/* カード内容 */
+.reform-card-body {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 20px;
+}
+
+
+/* 工事名 */
+.reform-card-title {
+    min-height: 3em;
+
+    margin: 0 0 12px;
+
+    color: #333;
+
+    font-size: 21px;
+    font-weight: bold;
+
+    line-height: 1.5;
+}
+
+
+/* 説明 */
+.reform-card-description {
+    height: 5.1em;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    display: -webkit-box;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp: 3;
+
+    line-clamp: 3;
+}
+
+
+/* 価格 */
+.reform-price-list {
+    margin-top: auto;
+    margin-bottom: 0;
+
+    padding: 12px 14px;
+
+    background-color: #fff5f5;
+
+    border-left: 4px solid #d33;
+}
+
+.reform-price-item {
+    margin: 4px 0;
+
+    color: #d00000;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    line-height: 1.6;
+}
+
+
+/* 読み込み中 */
+.reform-loading {
+    margin: 0;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+}
+
+
+/* エラー */
+.reform-error {
+    margin: 0;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #b33;
+
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+}
+
+
+/* 価格について */
+.reform-price-note {
+    margin-top: 50px;
+
+    padding: 20px 25px;
+
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+}
+
+.reform-price-note p {
+    margin: 4px 0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* 無料見積もり */
+.reform-price {
+    padding: 70px 0;
+
+    text-align: center;
+}
+
+.price-message {
+    margin: 0 0 10px;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.reform-price h2 {
+    margin: 0;
+
+    font-size: 34px;
+
+    line-height: 1.4;
+}
+
+.price-free {
+    margin: 15px 0;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.reform-price p:not(.price-message):not(.price-free) {
+    max-width: 700px;
+
+    margin: 0 auto 25px;
+
+    line-height: 1.8;
+}
+
+
+/* お問い合わせボタン */
+.reform-contact-button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    color: #fff;
+
+    background-color: #70a85a;
+
+    border-radius: 4px;
+}
+
+.reform-contact-button:hover {
+    opacity: 0.8;
+}
+
+
+/* 会社情報 */
+.reform-company {
+    padding: 60px 0;
+
+    text-align: center;
+
+    background-color: #f7f7f7;
+}
+
+.reform-company h2 {
+    margin: 0 0 20px;
+
+    font-size: 28px;
+}
+
+.reform-company p {
+    margin: 5px 0;
+
+    line-height: 1.8;
+}
+
+
+/* スマホ表示 */
+@media (max-width: 768px) {
+
+    /* ページタイトル */
+    .reform-title {
+        padding: 50px 0;
+    }
+
+    .reform-title h2 {
+        font-size: 32px;
+    }
+
+
+    /* リフォームの特徴 */
+    .reform-feature {
+        padding: 50px 0;
+    }
+
+    .reform-feature h2 {
+        font-size: 24px;
+    }
+
+    .feature-list {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .feature-item {
+        padding: 22px 18px;
+    }
+
+
+    /* リフォーム一覧 */
+    .reform-list-section {
+        padding: 50px 0;
+    }
+
+    .reform-list-section .container {
+        width: 94%;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+
+    /* カテゴリー */
+    .reform-category {
+        margin-bottom: 45px;
+    }
+
+    .reform-category-title {
+        margin-bottom: 18px;
+
+        padding: 9px 12px;
+
+        font-size: 21px;
+
+        border-left-width: 5px;
+    }
+
+    /* スマホ横スクロール */
+    .reform-grid {
+    display: flex;
+
+    gap: 15px;
+
+    overflow-x: auto;
+
+    padding-bottom: 12px;
+
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: thin;
+    scrollbar-color: #70a85a #e5e5e5;
+    }
+
+    /* 横スクロールバー */
+    .reform-grid::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .reform-grid::-webkit-scrollbar-track {
+        background-color: #e5e5e5;
+        border-radius: 4px;
+    }
+
+    .reform-grid::-webkit-scrollbar-thumb {
+        background-color: #70a85a;
+        border-radius: 4px;
+    }
+
+
+    /* スマホカード */
+    .reform-card {
+        flex: 0 0 72%;
+
+        scroll-snap-align: start;
+    }
+
+
+    /* カード内容 */
+    .reform-card-body {
+        padding: 18px;
+    }
+
+    .reform-card-title {
+        min-height: 3em;
+
+        margin-bottom: 12px;
+
+        font-size: 19px;
+    }
+
+    .reform-card-description {
+        height: 5.1em;
+
+        font-size: 14px;
+    }
+
+    .reform-price-list {
+        padding: 10px 12px;
+    }
+
+    .reform-price-item {
+        font-size: 16px;
+    }
+
+
+    /* 価格について */
+    .reform-price-note {
+        margin-top: 35px;
+
+        padding: 15px 18px;
+    }
+
+
+    /* 無料見積もり */
+    .reform-price {
+        padding: 50px 0;
+    }
+
+    .reform-price h2 {
+        font-size: 28px;
+    }
+
+    .price-free {
+        font-size: 22px;
+    }
+
+
+    /* 会社情報 */
+    .reform-company {
+        padding: 50px 0;
+    }
+
+    .reform-company h2 {
+        font-size: 24px;
+    }
+
+}
