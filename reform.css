@@ -468,43 +468,63 @@
         border-left-width: 5px;
     }
 
+
     /* スマホ横スクロール */
     .reform-grid {
-    display: flex;
+        display: flex;
 
-    gap: 15px;
+        gap: 15px;
 
-    overflow-x: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
 
-    padding-bottom: 12px;
+        padding-bottom: 12px;
 
-    scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
 
-    -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
 
-    scrollbar-width: thin;
-    scrollbar-color: #000000 #000000;
+        /* Firefox */
+        scrollbar-width: thin;
+        scrollbar-color: #000000 #000000;
     }
+
 
     /* 横スクロールバー */
     .reform-grid::-webkit-scrollbar {
+        width: 8px;
         height: 8px;
+
+        background: #000000 !important;
     }
 
+
+    /* スクロールバーの背景 */
     .reform-grid::-webkit-scrollbar-track {
-        background-color: #000000;
+        background: #000000 !important;
+
         border-radius: 4px;
     }
 
+
+    /* スクロールバーのつまみ */
     .reform-grid::-webkit-scrollbar-thumb {
-        background-color: #000000;
+        background: #000000 !important;
+
+        border: 0 !important;
         border-radius: 4px;
+    }
+
+
+    /* スクロールバーの角 */
+    .reform-grid::-webkit-scrollbar-corner {
+        background: #000000 !important;
     }
 
 
     /* スマホカード */
     .reform-card {
-        flex: 0 0 72%;
+        flex: 0 0 60%;
 
         scroll-snap-align: start;
     }
