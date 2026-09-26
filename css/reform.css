@@ -476,18 +476,55 @@
         gap: 15px;
 
         overflow-x: auto;
+        overflow-y: hidden;
 
-        padding-bottom: 10px;
+        padding-bottom: 12px;
 
         scroll-snap-type: x mandatory;
 
         -webkit-overflow-scrolling: touch;
+
+        /* Firefox */
+        scrollbar-width: thin;
+        scrollbar-color: #000000 #000000;
+    }
+
+
+    /* 横スクロールバー */
+    .reform-grid::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+
+        background: #000000 !important;
+    }
+
+
+    /* スクロールバーの背景 */
+    .reform-grid::-webkit-scrollbar-track {
+        background: #000000 !important;
+
+        border-radius: 4px;
+    }
+
+
+    /* スクロールバーのつまみ */
+    .reform-grid::-webkit-scrollbar-thumb {
+        background: #000000 !important;
+
+        border: 0 !important;
+        border-radius: 4px;
+    }
+
+
+    /* スクロールバーの角 */
+    .reform-grid::-webkit-scrollbar-corner {
+        background: #000000 !important;
     }
 
 
     /* スマホカード */
     .reform-card {
-        flex: 0 0 85%;
+        flex: 0 0 60%;
 
         scroll-snap-align: start;
     }
