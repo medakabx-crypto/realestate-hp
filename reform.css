@@ -483,7 +483,7 @@
     -webkit-overflow-scrolling: touch;
 
     scrollbar-width: thin;
-    scrollbar-color: #25680a #000000;
+    scrollbar-color: #000000 #000000;
     }
 
     /* 横スクロールバー */
@@ -497,7 +497,7 @@
     }
 
     .reform-grid::-webkit-scrollbar-thumb {
-        background-color: #25680a;
+        background-color: #000000;
         border-radius: 4px;
     }
 
