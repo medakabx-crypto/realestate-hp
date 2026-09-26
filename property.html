@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ページタイトル -->
-    <title>物件一覧 | 江井ヶ島不動産合同会社</title>
+    <title>物件一覧 | 江井ケ嶋不動産合同会社</title>
 
     <!-- CSSを読み込み -->
     <link rel="stylesheet" href="css/common.css">
@@ -373,7 +373,7 @@
             <div class="container">
 
                 <p class="property-description">
-                    江井ヶ島不動産合同会社が取り扱っている物件をご紹介します。
+                    江井ケ嶋不動産合同会社が取り扱っている物件をご紹介します。
                 </p>
 
 
@@ -455,6 +455,10 @@
         const SPREADSHEET_ID =
             "1tJYNLRsLskd3AprDuwcV_bBuL-ep_nKWMGMISDhIn8c";
 
+        // Googleスプレッドシートのシート名
+        const SHEET_NAME =
+            "物件一覧";
+
 
         // 物件一覧を取得
         function loadProperties() {
@@ -470,6 +474,8 @@
                 SPREADSHEET_ID +
                 "/gviz/tq" +
                 "?tqx=out:json" +
+                "&sheet=" +
+                encodeURIComponent(SHEET_NAME) +
                 "&tq=" +
                 encodeURIComponent(query);
 
@@ -490,6 +496,7 @@
 
                 })
 
+
                 .then(text => {
 
                     const jsonText =
@@ -508,6 +515,7 @@
                     );
 
                 })
+
 
                 .catch(error => {
 
@@ -592,6 +600,7 @@
                     B列の公開は表示しない
                     K列の写真は取得していない
                 */
+
 
                 const property = {
 
@@ -797,6 +806,7 @@
                     text
                 );
 
+
                 body.appendChild(
                     recommendation
                 );
@@ -853,7 +863,9 @@
         ) {
 
             if (!value) {
+
                 return;
+
             }
 
 
