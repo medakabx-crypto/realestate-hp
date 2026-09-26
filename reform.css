@@ -492,12 +492,12 @@
     }
 
     .reform-grid::-webkit-scrollbar-track {
-        background-color: #e5e5e5;
+        background-color: #000000;
         border-radius: 4px;
     }
 
     .reform-grid::-webkit-scrollbar-thumb {
-        background-color: #70a85a;
+        background-color: #25680a;
         border-radius: 4px;
     }
 
