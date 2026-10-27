@@ -1,0 +1,711 @@
+/* 無料点検ページ全体 */
+.inspection-hero,
+.inspection-intro,
+.inspection-free,
+.inspection-merit,
+.inspection-contact,
+.inspection-message {
+    position: relative;
+}
+
+
+/* メインビジュアル */
+.inspection-hero {
+    padding: 60px 0;
+
+    text-align: center;
+
+    background-color: #f7f5f0;
+}
+
+.inspection-hero > .container {
+    position: relative;
+}
+
+.inspection-hero-subtitle {
+    margin: 0;
+
+    color: #6d9d59;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    line-height: 1.3;
+}
+
+.inspection-hero h2 {
+    margin: 10px 0 20px;
+
+    color: #222;
+
+    font-size: 48px;
+    font-weight: bold;
+
+    line-height: 1.3;
+}
+
+.inspection-hero h2::after {
+    display: block;
+
+    width: 60px;
+    height: 3px;
+
+    margin: 20px auto 0;
+
+    content: "";
+
+    background-color: #70a85a;
+}
+
+.inspection-hero-text {
+    max-width: 620px;
+
+    margin: 25px auto 0;
+
+    color: #555;
+
+    line-height: 1.9;
+}
+
+
+/* 無料バッジ */
+.inspection-hero-badge {
+    position: absolute;
+
+    top: -10px;
+    right: 5%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 95px;
+    height: 95px;
+
+    color: #fff;
+
+    background-color: #c93131;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    transform: rotate(8deg);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* セクション見出し */
+.inspection-section-heading {
+    margin-bottom: 45px;
+
+    text-align: center;
+}
+
+.inspection-section-heading p {
+    margin: 0;
+
+    color: #6d9d59;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    line-height: 1.3;
+}
+
+.inspection-section-heading h2 {
+    margin: 8px 0 0;
+
+    color: #333;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    line-height: 1.4;
+}
+
+
+/* チェック項目 */
+.inspection-intro {
+    padding: 70px 0;
+
+    background-color: #fff;
+}
+
+.inspection-check-list {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* チェックカード */
+.inspection-check-card {
+    overflow: hidden;
+
+    background-color: #fff;
+
+    border: 1px solid #e1e5de;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+/* 写真 */
+.inspection-check-image {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.inspection-check-image img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.inspection-check-card:hover
+.inspection-check-image img {
+    transform: scale(1.04);
+}
+
+
+/* 番号 */
+.inspection-check-image span {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    color: #fff;
+
+    background-color: rgba(44, 72, 53, 0.9);
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* カード本文 */
+.inspection-check-body {
+    padding: 22px 20px 25px;
+}
+
+.inspection-check-body h3 {
+    margin: 0 0 10px;
+
+    color: #333;
+
+    font-size: 19px;
+    font-weight: bold;
+
+    line-height: 1.5;
+}
+
+.inspection-check-body h3::before {
+    display: inline-block;
+
+    width: 4px;
+    height: 18px;
+
+    margin-right: 9px;
+
+    content: "";
+
+    vertical-align: -2px;
+
+    background-color: #70a85a;
+}
+
+.inspection-check-body p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* 無料点検料金 */
+.inspection-free {
+    padding: 50px 0;
+
+    background-color: #f7f5f0;
+}
+
+.inspection-free-box {
+    max-width: 850px;
+
+    margin: 0 auto;
+    padding: 35px 40px;
+
+    text-align: center;
+
+    background-color: #fff;
+
+    border: 1px solid #ddd;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.inspection-free-label {
+    margin: 0;
+
+    color: #333;
+
+    font-size: 23px;
+    font-weight: bold;
+
+    line-height: 1.5;
+}
+
+.inspection-free-box h2 {
+    margin: 5px 0 5px;
+
+    color: #c93131;
+
+    font-size: 64px;
+    font-weight: bold;
+
+    line-height: 1.1;
+}
+
+.inspection-free-text {
+    margin: 10px 0 0;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* 点検について */
+.inspection-merit {
+    padding: 80px 0;
+
+    background-color: #fff;
+}
+
+.inspection-merit-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.inspection-merit-item {
+    display: flex;
+
+    gap: 15px;
+
+    padding: 25px;
+
+    background-color: #f8faf7;
+
+    border: 1px solid #e1e7df;
+}
+
+.inspection-merit-item > span {
+    flex: 0 0 auto;
+
+    color: #70a85a;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.inspection-merit-item h3 {
+    margin: 0 0 8px;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+
+.inspection-merit-item p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* お問い合わせ */
+.inspection-contact {
+    padding: 50px 0;
+
+    background-color: #eef4eb;
+}
+
+.inspection-contact-box {
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+}
+
+
+/* お問い合わせメイン */
+.inspection-contact-main {
+    text-align: center;
+}
+
+.inspection-contact-subtitle {
+    margin: 0;
+
+    color: #6d9d59;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.inspection-contact-main h2 {
+    margin: 8px 0 20px;
+
+    color: #2d4736;
+
+    font-size: 32px;
+
+    line-height: 1.5;
+}
+
+.inspection-contact-main > p:not(.inspection-contact-subtitle) {
+    margin: 0 0 25px;
+
+    color: #555;
+
+    line-height: 1.8;
+}
+
+
+/* お問い合わせボタン */
+.inspection-contact-button {
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    color: #fff;
+
+    background-color: #2d4736;
+
+    border-radius: 3px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.inspection-contact-button:hover {
+    opacity: 0.85;
+
+    transform: translateY(-2px);
+}
+
+
+/* 会社情報 */
+.inspection-company {
+    padding: 32px;
+
+    text-align: center;
+
+    background-color: #fff;
+
+    border: 1px solid #dfe6db;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+.inspection-company-label {
+    margin: 0 0 10px;
+
+    color: #6d9d59;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.inspection-company h3 {
+    margin: 0 0 18px;
+
+    font-size: 22px;
+
+    line-height: 1.5;
+}
+
+.inspection-company p {
+    margin: 5px 0;
+
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* 最後のメッセージ */
+.inspection-message {
+    padding: 25px 0;
+
+    text-align: center;
+
+    background-color: #fff;
+}
+
+.inspection-message p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* スマホ表示 */
+@media (max-width: 768px) {
+
+    /* メインビジュアル */
+    .inspection-hero {
+        padding: 60px 0;
+    }
+
+    .inspection-hero-subtitle {
+        font-size: 12px;
+    }
+
+    .inspection-hero h2 {
+        font-size: 34px;
+    }
+
+    .inspection-hero-text {
+        padding: 0 15px;
+
+        font-size: 14px;
+    }
+
+
+    /* 無料バッジ */
+    .inspection-hero-badge {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        width: 65px;
+        height: 65px;
+
+        margin: 25px auto 0;
+
+        font-size: 18px;
+    }
+
+
+    /* セクション見出し */
+    .inspection-section-heading {
+        margin-bottom: 30px;
+    }
+
+    .inspection-section-heading h2 {
+        font-size: 25px;
+    }
+
+
+    /* チェック項目 */
+    .inspection-intro {
+        padding: 55px 0;
+    }
+
+    .inspection-check-list {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    /* チェックカード */
+    .inspection-check-image img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .inspection-check-image span {
+        top: 8px;
+        left: 8px;
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 10px;
+    }
+
+    .inspection-check-body {
+        padding: 14px 13px 17px;
+    }
+
+    .inspection-check-body h3 {
+        margin-bottom: 8px;
+
+        font-size: 15px;
+    }
+
+    .inspection-check-body h3::before {
+        width: 3px;
+        height: 14px;
+
+        margin-right: 6px;
+    }
+
+    .inspection-check-body p {
+        font-size: 12px;
+
+        line-height: 1.65;
+    }
+
+
+    /* 無料点検 */
+    .inspection-free {
+        padding: 45px 0;
+    }
+
+    .inspection-free-box {
+        padding: 25px 20px;
+    }
+
+    .inspection-free-label {
+        font-size: 19px;
+    }
+
+    .inspection-free-box h2 {
+        font-size: 50px;
+    }
+
+
+    /* 点検について */
+    .inspection-merit {
+        padding: 55px 0;
+    }
+
+    .inspection-merit-list {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .inspection-merit-item {
+        padding: 20px;
+    }
+
+    .inspection-merit-item h3 {
+        font-size: 17px;
+    }
+
+    .inspection-merit-item p {
+        font-size: 13px;
+    }
+
+
+    /* お問い合わせ */
+    .inspection-contact {
+        padding: 55px 0;
+    }
+
+    .inspection-contact-box {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .inspection-contact-main h2 {
+        font-size: 26px;
+    }
+
+    .inspection-contact-main > p:not(.inspection-contact-subtitle) {
+        font-size: 14px;
+    }
+
+    .inspection-contact-button {
+        width: 100%;
+
+        padding: 14px 20px;
+
+        font-size: 15px;
+    }
+
+
+    /* 会社情報 */
+    .inspection-company {
+        padding: 25px 15px;
+    }
+
+    .inspection-company h3 {
+        font-size: 20px;
+    }
+
+
+    /* 最後のメッセージ */
+    .inspection-message {
+        padding: 18px 10px;
+    }
+
+    .inspection-message p {
+        font-size: 11px;
+    }
+
+}
