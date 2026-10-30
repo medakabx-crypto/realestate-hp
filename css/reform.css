@@ -380,28 +380,6 @@
 }
 
 
-/* 会社情報 */
-.reform-company {
-    padding: 60px 0;
-
-    text-align: center;
-
-    background-color: #f7f7f7;
-}
-
-.reform-company h2 {
-    margin: 0 0 20px;
-
-    font-size: 28px;
-}
-
-.reform-company p {
-    margin: 5px 0;
-
-    line-height: 1.8;
-}
-
-
 /* スマホ表示 */
 @media (max-width: 768px) {
 
@@ -591,16 +569,6 @@
 
     .price-free {
         font-size: 22px;
-    }
-
-
-    /* 会社情報 */
-    .reform-company {
-        padding: 50px 0;
-    }
-
-    .reform-company h2 {
-        font-size: 24px;
     }
 
 }
